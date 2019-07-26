@@ -1,6 +1,6 @@
 # Minesweeper
 
-An implementation of Minesweeper in PHP.
+An implementation of Minesweeper game in PHP as command-line application. 
 
 ### Installation (using PHP)
 
