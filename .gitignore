@@ -1,0 +1,23 @@
+# SublimeText
+*.sublime-project
+*.sublime-workspace
+# VS Code
+.vscode
+# PHPStorm
+.idea/
+# Composer
+vendor
+# environment file
+.env
+# Codeception
+tests/_output
+# Mac
+.DS_Store
+# Docker Volumes
+data/*
+!/data/README.md
+# Logs
+/logs/*
+!/logs/README.md
+# PHPUnit
+.phpunit.*
