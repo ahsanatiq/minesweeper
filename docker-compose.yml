@@ -1,0 +1,11 @@
+version: "3"
+services:
+    php-fpm:
+      build: docker/php-fpm
+      container_name: minesweeper-php-fpm
+      volumes:
+        - .:/var/www
+        - ./docker/php-fpm/php7.3.ini:/usr/local/etc/php/php.ini
+      ports:
+        - "9000:9000"
+
