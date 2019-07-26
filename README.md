@@ -4,10 +4,11 @@ An implementation of Minesweeper in PHP.
 
 ### Installation (using PHP)
 
-Environment requirements:
+Requirements:
 
 - Git
 - PHP >= 7.2
+- Composer
 
 Setting up environment on your local machine:
 
@@ -41,10 +42,31 @@ $ git clone https://github.com/ahsanatiq/minesweeper.git
 $ cd minesweeper
 $ docker-compose up -d
 $ docker exec -it minesweeper-php-fpm composer install
-$ docker exec -it minesweeper-php-fpm bash /var/www/bin/minesweeper
+$ docker exec -it minesweeper-php-fpm /var/www/bin/minesweeper
 ```
+
 Run the unit-tests in the minesweeper-php-fpm container:
 
 ```bash
-$ docker exec -it minesweeper-php-fpm bash /var/www/vendor/bin/phpunit
+$ docker exec -it minesweeper-php-fpm /var/www/vendor/bin/phpunit
 ```
+
+### Running (command-line options)
+
+By default the game will start with `20 rows x 30 columns` board and `25 mines/bombs`. But you can overide these settings using the following command-line parameters:
+
+- -r, --rows[=ROWS] `number of rows of the board [default: 25]`
+
+- -c, --columns[=COLUMNS] `number of columns of the board [default: 30]`
+- -b, --bombs[=BOMBS] `number of hidden bombs in the board [default: 25]`
+
+Examples:
+
+```bash
+./bin/minesweeper --rows=5 --columns=5 --bombs=10
+```
+```bash
+./bin/minesweeper -r 5 -c 5 -b 10
+```
+
+
