@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../bootstrap/app.php';
+
+use Symfony\Component\Console\Application;
+
+$minesweeperCommand = app()->make('App\Commands\MinesweeperCommand');
+
+$app = new Application('Minesweeper game console', 'v1.0.0');
+$app->add($minesweeperCommand);
+$app->setDefaultCommand($minesweeperCommand->getName(), true);
+$app->run();
